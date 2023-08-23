@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "petiteapp-1936f": {
+      "hosting": {
+        "petiteAPP": [
+          "petiteapp-1936f"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "petiteapp-1936f"
+  }
+}
