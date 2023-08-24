@@ -7,7 +7,11 @@
 
 # En caso de no hacer commit 
   git pull --rebase origin main
-  git push -u origin main 
+  git push -u origin main
+
+
+## Crear Componente con su modulo y Actualizacion
+  ng g module carpeta-destino/component-name --module app --route component-name
 
 
 # PetiteAPP
