@@ -1,3 +1,4 @@
+
 # Pasos para realizar un commit en git
 	1. git status  
     2. git add *
