@@ -7,6 +7,8 @@ const routes: Routes = [
 { path: 'dashboard', loadChildren: () => import('./shared/dashboard/dashboard.module').then(m => m.DashboardModule) },
 { path: 'graficas', loadChildren: () => import('./shared/graficas/graficas.module').then(m => m.GraficasModule) },
 { path: 'tablas', loadChildren: () => import('./shared/tablas/tablas.module').then(m => m.TablasModule) },
+{ path: 'generarVenta', loadChildren: () => import('./shared/generar-venta/generar-venta.module').then(m => m.GenerarVentaModule) },
+{ path: 'facturacion', loadChildren: () => import('./shared/facturacion/facturacion.module').then(m => m.FacturacionModule) },
 { path:'**',pathMatch:'full',redirectTo:'/login'}
 ];
 
