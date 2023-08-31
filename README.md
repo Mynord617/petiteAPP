@@ -1,4 +1,18 @@
 
+## PROYECTO SISTEMA DE SOPORTE DE DECISIONES 
+  ## GRUPO #1
+     1. Allan Flores
+     2. Pamela Palma
+     3. Estefany Lagos
+     4. Dagoberto Doblado
+     5. Emanuel Portillo
+     6. Mynor Dominguez
+
+
+
+
+
+
 # Pasos para realizar un commit en git
 	1. git status  
     2. git add *
@@ -49,3 +63,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Para crear un componente Standalone
 
 ng generate component --standalone my-component
+

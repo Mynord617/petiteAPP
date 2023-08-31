@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { RegistroRoutingModule } from './registro-routing.module';
 import { RegistroComponent } from './registro.component';
 import { NavbarComponent } from "../../components/navbar/navbar.component";
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -13,7 +14,8 @@ import { NavbarComponent } from "../../components/navbar/navbar.component";
     imports: [
         CommonModule,
         RegistroRoutingModule,
-        NavbarComponent
+        NavbarComponent,
+        ReactiveFormsModule
     ]
 })
 export class RegistroModule { }
