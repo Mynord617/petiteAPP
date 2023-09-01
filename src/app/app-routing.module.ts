@@ -9,6 +9,9 @@ const routes: Routes = [
 { path: 'tablas', loadChildren: () => import('./shared/tablas/tablas.module').then(m => m.TablasModule) },
 { path: 'generarVenta', loadChildren: () => import('./shared/generar-venta/generar-venta.module').then(m => m.GenerarVentaModule) },
 { path: 'facturacion', loadChildren: () => import('./shared/facturacion/facturacion.module').then(m => m.FacturacionModule) },
+{ path: 'crear-producto', loadChildren: () => import('./productos/crear-producto/crear-producto.module').then(m => m.CrearProductoModule) },
+
+{ path: 'lista-productos', loadChildren: () => import('./productos/lista-productos/lista-productos.module').then(m => m.ListaProductosModule) },
 { path:'**',pathMatch:'full',redirectTo:'/login'}
 ];
 
