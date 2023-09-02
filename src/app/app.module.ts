@@ -8,6 +8,7 @@ import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
 import { provideAuth, getAuth } from '@angular/fire/auth';
 import { environment } from 'src/environments/environment.development';
 import { NavbarComponent } from "./components/navbar/navbar.component";
+import { provideFirestore,getFirestore} from "@angular/fire/firestore"; 
 
 @NgModule({
     declarations: [
@@ -20,6 +21,7 @@ import { NavbarComponent } from "./components/navbar/navbar.component";
         AppRoutingModule,
         ReactiveFormsModule,
         provideFirebaseApp(() => initializeApp(environment.firebase)),
+        provideFirestore(()=> getFirestore()),
         provideAuth(() => getAuth()),
         NavbarComponent
     ]
