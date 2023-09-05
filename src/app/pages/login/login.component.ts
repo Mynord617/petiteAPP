@@ -27,7 +27,7 @@ onSubmit() {
   this.authServices.login(this.formLogin.value)
     .then(response => {
       console.log(response);
-    //  this.router.navigate(['./dasboard'])
+      this.router.navigate(['/generarVenta'])
     })
     .catch(error => console.error(error));
 
@@ -35,21 +35,8 @@ onSubmit() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
   ngOnInit(): void {
-    throw new Error('Method not implemented.');
+   
   }
 
 }
