@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { NosotrosComponent } from './examples/nosotros/nosotros.component';
 
 const routes: Routes = [
 { path: 'login', loadChildren: () => import('./pages/login/login.module').then(m => m.LoginModule) },
@@ -10,7 +11,7 @@ const routes: Routes = [
 { path: 'generarVenta', loadChildren: () => import('./shared/generar-venta/generar-venta.module').then(m => m.GenerarVentaModule) },
 { path: 'facturacion', loadChildren: () => import('./shared/facturacion/facturacion.module').then(m => m.FacturacionModule) },
 { path: 'crear-producto', loadChildren: () => import('./productos/crear-producto/crear-producto.module').then(m => m.CrearProductoModule) },
-
+{ path: 'nosotros', component: NosotrosComponent },
 { path: 'lista-productos', loadChildren: () => import('./productos/lista-productos/lista-productos.module').then(m => m.ListaProductosModule) },
 { path:'**',pathMatch:'full',redirectTo:'/login'}
 ];
