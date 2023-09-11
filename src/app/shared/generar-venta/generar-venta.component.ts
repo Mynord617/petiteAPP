@@ -9,7 +9,7 @@ import { Productos } from 'src/app/productos/models/productos.interface';
 })
 export class GenerarVentaComponent implements OnInit {
 
-  public producto: Productos[] = []; 
+  public producto: Productos[] = [];  
   
   constructor(
     private productoService: ProductosService,

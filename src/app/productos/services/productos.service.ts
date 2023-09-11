@@ -17,7 +17,7 @@ export class ProductosService {
   }
  
   obtenerProducto (): Observable <Productos[]> {
-    const productoRef = collection(this.firestore,'productos');
+    const productoRef = collection(this.firestore,'producto'); 
     return collectionData(productoRef, {idField:'id'}) as Observable<Productos[]>;
     console.log(collectionData);
     

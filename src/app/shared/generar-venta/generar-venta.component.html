@@ -28,10 +28,11 @@
   </button>
 </form>
 &nbsp;
-  <section *ngFor="let producto of producto" class="bg-gray-50 dark:bg-gray-900">
+  <section class="bg-gray-50 dark:bg-gray-900">
       &nbsp;
       <div class="grid grid-cols-3 gap-3 mt-5">
         <div
+        *ngFor="let producto of producto"
           class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
           &nbsp;
           <h1 class=" text-center">
@@ -39,7 +40,7 @@
           </h1>
           <a>
             <img
-              class="p-4 rounded-t-lg"
+              class="h-64 w-full p-4 rounded-t-lg"
               src="{{producto.imagen}}"
               alt="product image"
             />
