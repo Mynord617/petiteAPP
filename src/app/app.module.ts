@@ -10,6 +10,7 @@ import { environment } from 'src/environments/environment.development';
 import { NavbarComponent } from "./components/navbar/navbar.component";
 import { provideFirestore,getFirestore} from "@angular/fire/firestore";
 import { CartComponent } from './cart/cart.component';
+import { provideStorage,getStorage } from '@angular/fire/storage';
 
 @NgModule({
     declarations: [
@@ -31,7 +32,7 @@ import { CartComponent } from './cart/cart.component';
         provideFirestore(()=> getFirestore()),
         provideAuth(() => getAuth()),
         NavbarComponent,
-        
+        provideStorage(() => getStorage())
     ],
 })
 export class AppModule { }

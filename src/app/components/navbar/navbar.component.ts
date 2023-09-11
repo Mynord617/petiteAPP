@@ -1,6 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
+import { Router,RouterModule } from '@angular/router';
+import { AuthService } from 'src/app/services/auth.service';
 
 
 @Component({
@@ -14,5 +15,24 @@ import { RouterModule } from '@angular/router';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+
+  
+  
+constructor (
+  private authServices: AuthService,
+  private router: Router
+){
+
+}
+
+  cerrarSesion() {
+  this.authServices.logout()
+    .then(()=>{
+      this.router.navigate(['/login'])
+    }).catch(error =>console.log(error));
+    
+}
+
+  
 
 }

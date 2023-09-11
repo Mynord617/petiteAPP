@@ -39,19 +39,19 @@ export class CrearProductoComponent implements OnInit {
   ]
 
   constructor(
-    private productoServicio: ProductosService
+    private productoServicio: ProductosService,
+
   ) {
     this.formulario = new FormGroup({
       nombre: new FormControl,
       descripcion: new FormControl,
       precio: new FormControl,
+      cantidad: new FormControl,
       categoria: new FormControl,
       imagen: new FormControl
     })
   }
-  
-  
-  
+
   
   ngOnInit(): void {
    // throw new Error('Method not implemented.');
@@ -63,4 +63,12 @@ export class CrearProductoComponent implements OnInit {
     console.log(respuesta);
     
   }
+
+
+ async getProducto() {
+
+    const respuesta = await this.productoServicio.obtenerProductoPorNombre()
+    console.log(respuesta);
+    
+  } 
 }
