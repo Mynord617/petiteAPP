@@ -23,11 +23,7 @@ import { provideStorage,getStorage } from '@angular/fire/storage';
         BrowserModule,
         AppRoutingModule,
         ReactiveFormsModule,
-        /*RouterModule.forRoot([
-            { path: '', component: ProductListComponent },
-            { path: 'products/:productId', component: ProductDetailsComponent },
-            { path: 'cart', component: CartComponent },
-          ]),*/
+        
         provideFirebaseApp(() => initializeApp(environment.firebase)),
         provideFirestore(()=> getFirestore()),
         provideAuth(() => getAuth()),

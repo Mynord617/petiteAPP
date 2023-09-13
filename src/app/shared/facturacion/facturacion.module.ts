@@ -4,6 +4,7 @@ import { CommonModule } from '@angular/common';
 import { FacturacionRoutingModule } from './facturacion-routing.module';
 import { FacturacionComponent } from './facturacion.component';
 import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
+import { TotalComponent } from '../total/total.component';
 
 
 
@@ -14,7 +15,8 @@ import { NavbarComponent } from 'src/app/components/navbar/navbar.component';
     imports: [
         CommonModule,
         FacturacionRoutingModule,
-        NavbarComponent
+        NavbarComponent,
+        TotalComponent
     ]
 })
 export class FacturacionModule { }

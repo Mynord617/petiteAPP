@@ -1,13 +1,18 @@
 import { Injectable } from '@angular/core';
-import { Firestore, addDoc, collection, collectionData, query, where, getDocs } from '@angular/fire/firestore';
 import { Productos } from '../models/productos.interface';
+import { Firestore, addDoc,collection, collectionData, setDoc, doc, query, where, getDocs } from '@angular/fire/firestore';  
 import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ProductosService {
-  constructor( private firestore: Firestore) { 
+
+  
+  constructor( 
+    private firestore: Firestore,
+  
+    ) { 
 
   }
 
@@ -15,11 +20,11 @@ export class ProductosService {
       const productoRef = collection(this.firestore,'producto');
       return addDoc (productoRef, productos)
   }
- 
+
   obtenerProducto (): Observable <Productos[]> {
-    const productoRef = collection(this.firestore,'producto'); 
+    const productoRef = collection(this.firestore,'producto');
     return collectionData(productoRef, {idField:'id'}) as Observable<Productos[]>;
-    console.log(collectionData);
+    //console.log(collectionData);
     
   }
 
@@ -37,5 +42,6 @@ querySnapshot.forEach((doc) => {
   eliminarProducto(){
 
   }
-  
+
+
 }

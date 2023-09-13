@@ -1,23 +1,129 @@
 <div class="p-4 sm:ml-64">
-  <div
-    class="p-4 border-2 border-b-gray-900 border-dashed rounded-lg dark:border-gray-700 mt-14"
-  >
-    
-<h1 class="text-center"><strong>FACTURACION LA PETITE & BISTRO</strong></h1>
-&nbsp;
-  <form class="grid grid-flow-col items-center">
-    <div class="grid gap-6 mb-6 md:grid-cols-2">
+  <div class="p-4 border-2 border-b-gray-900 border-dashed rounded-lg dark:border-gray-700 mt-14">
+
+    <h1 class="text-center"><strong>FACTURACION LA PETITE & BISTRO</strong></h1>
+    <img class="h-28 " src="assets/docs/images/examples/LaPetiteyBistro.svg" alt="">
+    <p>
+      ______________________________________________________________________________________________________________________________________________
+    </p>
+
+    &nbsp;
+    <form class="grid grid-flow-col items-center">
+      <div class="grid gap-2 md:grid-cols-2">
         <div>
-            <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">productos recibidos</label>
-            <input type="text" id="first_name" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="Aqui se recibira un producto" >
-          </div>
-          <a href="" class="font-medium text-red-600 dark:text-red-500 hover:underline">Eliminar</a>
+          <label for="first_name" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+            Fecha y hora: <strong>{{currentDate | date: 'dd-MM-YYYY HH:mm.ss'}}</strong>  </label>
+        </div>
     </div>
-  </form>
-  <button type="submit" class="grid grid-flow-row text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Vender</button>
+    </form>
+    <div class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+      <label for="">
+        Nombre Cliente:    <strong>Consumidor FInal</strong>
+      </label>
+    </div>
 
 
+    <p>
+      ______________________________________________________________________________________________________________________________________________
+    </p>
 
+    
+    <div class="relative overflow-x-auto">
+      <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3">
+              Eliminar Pedido
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Nombre de Producto
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Descripción
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Precio
+            </th>
+            <th scope="col" class="px-6 py-3">
+              Total
+            </th>
+          </tr>
+        </thead>
+        <tbody *ngFor="let producto of productos; let indice = index;">
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <td class="px-6 py-4">
+              <button type="submit"
+              class=" font-medium text-red-700 dark:text-red-800  hover:underline" (click)="onClickEliminar(indice)">
+              Eliminar</button>
+            </td>
+            <th class="px-6 py-4">
+              {{producto.nombre}}
+            </th>
+            <td class="px-6 py-4">
+              {{producto.descripcion}}
+            </td>
+            <td class="px-6 py-4">
+              {{producto.precio}}
+            </td>
+            <td class="px-6 py-4">
+              
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
 
+    <p>
+      ______________________________________________________________________________________________________________________________________________
+    </p>
+
+    <div class="relative mx-auto">
+      <table class="w-15 relative left-3/4 object-none object-left text-sm text-left text-gray-500 dark:text-gray-400">
+        <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+          <tr>
+            <th scope="col" class="px-6 py-3">
+              
+            </th>
+            <th scope="col" class="px-6 py-3">
+              
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+            <td class="px-6 py-4">
+             <strong>Sub Total:</strong>
+            </td>
+            <td class="px-6 py-4 bg-green-200">
+              
+            </td>
+          </tr>
+          <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
+
+            <td class="px-6 py-4 ">
+           <strong>Tax:</strong>
+            </td>
+            <td class="px-6 py-4 bg-green-100">
+              
+            </td>
+          </tr>
+          <tr class="bg-white dark:bg-gray-800">
+
+            <td class="px-6 py-4">
+              <strong>Total: </strong>
+            </td>
+            <td class="px-6 py-4 bg-green-200">
+              <app-total></app-total>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <button type="submit"
+    class=" text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-500 dark:hover:bg-green-600 dark:focus:ring-green-800">
+    Vender</button>
+    <p>
+      ______________________________________________________________________________________________________________________________________________
+    </p>
   </div>
 </div>

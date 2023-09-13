@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductosService } from 'src/app/productos/services/productos.service';
 import { Productos } from 'src/app/productos/models/productos.interface';
+import { FacturacionService } from '../facturacion/services/facturacion.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-generar-venta',
@@ -9,10 +11,11 @@ import { Productos } from 'src/app/productos/models/productos.interface';
 })
 export class GenerarVentaComponent implements OnInit {
 
-  public producto: Productos[] = [];  
+  public producto: Productos[] = []; 
   
   constructor(
     private productoService: ProductosService,
+    private facturacionService: FacturacionService
     
     ) {
 
@@ -23,5 +26,17 @@ export class GenerarVentaComponent implements OnInit {
     console.log(this.producto);
     
   }
+  argregar(producto: Productos){
+    this.facturacionService.agregarProducto(producto);
+  }
+  confirmacionEnvio(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: '¡Producto agregado con Exito!',
+      showConfirmButton: false,
+      timer: 1000
+    })
 
+  }
 }
