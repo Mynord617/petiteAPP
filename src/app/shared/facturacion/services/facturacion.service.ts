@@ -31,4 +31,5 @@ export class FacturacionService {
     this.facturacionProductos.slice(index,1);
     this._productos.next(this.facturacionProductos);
   }
+  
   }
