@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Productos } from '../models/productos.interface';
-import { Firestore, addDoc,collection, collectionData, setDoc, doc, query, where, getDocs } from '@angular/fire/firestore';  
+import { Firestore, addDoc, collection, collectionData, setDoc, doc, query, where, getDocs } from '@angular/fire/firestore';  
 import { Observable } from 'rxjs';
 
 @Injectable({
@@ -39,9 +39,16 @@ querySnapshot.forEach((doc) => {
 
   }
 
+  actualizarCant(producto:Productos){
+    
+   }
+
   eliminarProducto(){
 
   }
 
+
+
+  
 
 }

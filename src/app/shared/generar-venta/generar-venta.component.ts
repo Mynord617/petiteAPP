@@ -22,13 +22,34 @@ export class GenerarVentaComponent implements OnInit {
   }
   
   ngOnInit(): void {
-    this.productoService.obtenerProducto().subscribe(productos =>{this.producto = productos})
+    this.productoService.obtenerProducto().subscribe(productos =>{this.producto = productos});
     console.log(this.producto);
     
   }
   argregar(producto: Productos){
-    this.facturacionService.agregarProducto(producto);
+    
+    
+    //actualizacion
+    let n = producto.cantidad;
+    
+    if(n>0){
+      this.facturacionService.agregarProducto(producto);
+      this.confirmacionEnvio();
+      n = n-1;
+      producto.cantidad=n;
+      this.productoService.actualizarCant(producto);
+    }else{
+      Swal.fire({
+        position: 'center',
+        icon: 'error',
+        title: 'Ya no hay producto',
+        showConfirmButton: true
+      })
+    }
+    
+
   }
+
   confirmacionEnvio(){
     Swal.fire({
       position: 'top-end',

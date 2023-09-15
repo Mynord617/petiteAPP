@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { BehaviorSubject } from 'rxjs';
 import { Productos } from 'src/app/productos/models/productos.interface';
+import { ProductosService } from 'src/app/productos/services/productos.service';
 
 @Injectable({
   providedIn: 'root'
@@ -20,16 +21,16 @@ export class FacturacionService {
       this._productos.next(this.facturacionProductos);
    }
 
-
    get producto() {
     return this._productos.asObservable();
    }
 
-
-   
   eliminarProductoLista(index: number) {
-    this.facturacionProductos.slice(index,1);
+    this.facturacionProductos.splice(index,1);
     this._productos.next(this.facturacionProductos);
   }
   
+
+
+
   }

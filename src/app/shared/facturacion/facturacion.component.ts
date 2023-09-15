@@ -33,9 +33,17 @@ export class FacturacionComponent implements OnInit{
     })
   }
 
-  onClickEliminar(indice: number){
-    this.facturacionService.eliminarProductoLista(indice)
+  onClickEliminar(producto:Productos, indice: number) {
+    let n = producto.cantidad;
+    n = n+1;
+    producto.cantidad = n;
+    console.log(producto.cantidad);
+
+    this.facturacionService.eliminarProductoLista(indice);
     console.log(indice);
   }
 
+
+
+  
 }
