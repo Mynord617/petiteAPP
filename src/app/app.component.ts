@@ -21,11 +21,11 @@ export class AppComponent implements OnInit{
     );
     navEndEvents.subscribe((event: any) => {
       gtag('config', 'G-DKKV5ZTWCQ',{'page_path': event.urlAfterRedirects});
-      console.log(event);
+      //console.log(event);
       
     });
   }
-
+ 
   ngOnInit(): void {
     initFlowbite();
   }

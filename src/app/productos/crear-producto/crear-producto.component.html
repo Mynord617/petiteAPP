@@ -1,7 +1,5 @@
 <div class="p-4 sm:ml-64">
-  <div
-    class="p-4 border-2 border-b-gray-900 border-dashed rounded-lg dark:border-gray-700 mt-14"
-  >
+  <div class="p-4 border-2 border-b-gray-900 border-dashed rounded-lg dark:border-gray-700 mt-14">
     <div>
       <h1 class="text-green-500">
         <strong>FORMULARIO DE REGISTRO DE NUEVO PRODUCTO</strong>
@@ -10,104 +8,61 @@
     </div>
     <form id="formularios" [formGroup]="formulario" (ngSubmit)="onSubmit()">
       <div class="relative z-0 w-full mb-6 group">
-        <input
-          type="text"
+        <input type="text"
           class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-700 focus:outline-none focus:ring-0 focus:border-green-600 peer"
-          placeholder=""
-          formControlName="nombre"
-          required
-        />
-        <label
-          for=""
-          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-          >
-          Nombre Producto</label
-        >
+          placeholder="" formControlName="nombre" required />
+        <label for=""
+          class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-focus:dark:text-green-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
+          Nombre Producto</label>
       </div>
       <div class="relative z-0 w-full mb-6 group">
-        <label
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          for="file_input"
-          >Cargar Imagen</label
-        >
+        <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="file_input">Cargar
+          Imagen</label>
         <input
           class="form-control block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400"
-          formControlName="imagen"
-          type="file"
-        />
+          formControlName="imagen" type="file" required />
       </div>
       <div class="relative z-0 w-full mb-6 group">
-        <label
-          for="message"
-          class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-          >Descripción del producto</label
-        >
-        <textarea
-          id="message"
-          rows="4"
+        <label for="message" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" required>Descripción
+          del producto</label>
+        <textarea id="message" rows="4"
           class="form-control block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-green-500 focus:border-green-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-gray-600 dark:focus:border-green-500"
-          placeholder="Detalles del producto"
-          formControlName="descripcion"
-          
-        >
-      </textarea>
+          placeholder="Detalles del producto" formControlName="descripcion" required>
+        </textarea>
       </div>
 
       <div class="grid md:grid-cols-2 md:gap-6">
         <div class="relative z-0 w-full mb-6 group">
-          <input
-            type="number"
-            name="floating_first_name"
-            id="floating_first_name"
+          <input type="number" name="floating_first_name" id="floating_first_name"
             class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
-            placeholder=""
-            formControlName="precio"
-            required
-          />
-          <label
-            for="floating_first_name"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >Precio</label
-          >
+            placeholder="" formControlName="precio" required />
+          <label for="floating_first_name"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Precio</label>
         </div>
         <div class="relative z-0 w-full mb-6 group">
-          <input
-            type="number"
-            name="floating_first_name"
-            id="floating_first_name"
+          <input type="number" name="floating_first_name" id="floating_first_name"
             class="form-control block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-green-500 focus:outline-none focus:ring-0 focus:border-green-600 peer"
-            placeholder=""
-            formControlName="cantidad"
-            required
-          />
-          <label
-            for="floating_first_name"
-            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
-            >cantidad</label
-          >
+            placeholder="" formControlName="cantidad" required />
+          <label for="floating_first_name"
+            class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-green-600 peer-focus:dark:text-green-600 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">cantidad</label>
         </div>
         <div class="relative z-0 w-full mb-6 group">
-          <label
-            for="countries"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-            >Seleccione una Categoria</label
-          >
-          <select
-            id="countries"
-            type="text"
-            formControlName="categoria"
-            class=" form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
-          >
+          <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Seleccione una
+            Categoria</label>
+          <select id="countries" type="text" formControlName="categoria"
+            class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-green-600 focus:border-green-600 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-green-500 dark:focus:border-green-500"
+            required>
             <option selected>Seleccionar Categoria</option>
-            <option *ngFor="let categoria of categoria" [value]="categoria.codigo">{{categoria.nombre}}</option>
+            <option *ngFor="let categoria of categoria" [value]="categoria.codigo">
+              {{ categoria.nombre }}
+            </option>
           </select>
         </div>
       </div>
 
-      <button
-        type="submit"
+      <button type="submit"
         class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-violet-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-violet-600 dark:hover:bg-violet-800 dark:focus:ring-violet-800"
-      >
+        (click)="confirmacionEnvio()">
         Crear Producto
       </button>
     </form>

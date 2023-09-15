@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
-import { AuthService } from '../../services/auth.service';
+import { AuthServices } from '../../services/auth.service';
+import Swal from 'sweetalert2';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -15,7 +16,7 @@ export class LoginComponent implements OnInit{
   formLogin: FormGroup;
 
   constructor(
-    private authService: AuthService,
+    private authServices: AuthServices,
     private router: Router
   ) {
     this.formLogin = new FormGroup({
@@ -26,7 +27,7 @@ export class LoginComponent implements OnInit{
 
 
 onSubmit() {
-  this.authService.login(this.formLogin.value)
+  this.authServices.login(this.formLogin.value)
     .then(response => {
       console.log(response);
      this.router.navigate(['/generarVenta'])
@@ -36,11 +37,30 @@ onSubmit() {
 }
 
 
+  
+confirmacionEnvio(){
+  Swal.fire({
+    position: 'top-end',
+    icon: 'success',
+    title: '¡Bienvenido!',
+    showConfirmButton: false,
+    timer: 2500
+  })
+}
 
   ngOnInit(): void {
 
-    this.usuario$ = this.authService.estadoDeUsuario
+    this.usuario$ = this.authServices.estadoDeUsuario
   }
+
+  
+  obtenerUsuario(){
+    this.authServices.obtenerUsuarioLogueado().subscribe(res =>{
+      console.log(res?.email);
+      
+    })
+  }
+
 
   
 }

@@ -1,50 +1,50 @@
 <div class="p-4 sm:ml-64">
-    <div
-      class="p-4 border-2 border-b-gray-900 border-dashed rounded-lg dark:border-gray-700 mt-14"
-    >
-      <section class="bg-gray-50 dark:bg-gray-900">
-        <div
-          class="flex flex-col items-center justify-center px-6 py-8 mx-auto md:h-screen lg:py-0"
-        >
-          <form>
-            <div class="mb-6">
-              <label
-                for="email"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-              >
-                Su Correo
-              </label>
-              <input
-                type="email"
-                id="email"
-                class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                placeholder="correo@petiteybistro.com"
-                formControlName="email"
-                required
-              />
-            </div>
-            <div class="mb-6">
-              <label
-                for="password"
-                class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
-                >Cambiar Contraseña
-              </label>
-              <input
-                type="password"
-                id="password"
-                class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
-                formControlName="password"
-                required
-              />
-            </div>
-            <button
-              type="submit"
-              class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
-            >
-              Registrate
-            </button>
-          </form>
+  <div class="p-4 border-2 border-b-gray-900 border-dashed rounded-lg dark:border-gray-700 mt-14">
+
+    <section class="bg-white dark:bg-gray-900">
+      <div class="py-8 px-4 mx-auto max-w-screen-xl text-center lg:py-6">
+        <h1
+          class="mb-4 text-4xl font-extrabold tracking-tight leading-none text-gray-900 md:text-5xl lg:text-6xl dark:text-white">
+          Solo los usuarios administradores pueden registrar nuevos usuarios</h1>
+        <div class="flex flex-col space-y-4 sm:flex-row sm:justify-center sm:space-y-0 sm:space-x-4">
+
+          <a
+            class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg border border-gray-300 hover:bg-gray-100 text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800">
+            Formulario de Registro
+          </a>
         </div>
-      </section>
-    </div>
+      </div>
+    </section>
+
+    <form [formGroup]="formularioReg" (ngSubmit)="onSubmit()">
+      <div class="relative">
+        <div class="absolute inset-y-0 left-0 flex items-center pl-3.5 pointer-events-none">
+          <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+            fill="currentColor" viewBox="0 0 20 16">
+            <path d="m10.036 8.278 9.258-7.79A1.979 1.979 0 0 0 18 0H2A1.987 1.987 0 0 0 .641.541l9.395 7.737Z" />
+            <path
+              d="M11.241 9.817c-.36.275-.801.425-1.255.427-.428 0-.845-.138-1.187-.395L0 2.6V14a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V2.5l-8.759 7.317Z" />
+          </svg>
+        </div>
+        <input type="text" id="email-address-icon" formControlName="email"
+          class="form-control bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full pl-10 p-2.5  dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          placeholder="name@petiteapp.com"
+          required
+          >
+      </div>
+      <div class="relative">
+        <label for="password" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Contraseña</label>
+        <input type="password" id="password"
+          class="form-control shadow-sm bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500 dark:shadow-sm-light"
+          formControlName="password" 
+          placeholder="••••••••"
+          required>
+      </div>
+      <div class="h-4"></div>
+      <button type="submit" value="Enviar" (click)="confirmacionEnvio()"
+        class="inline-flex justify-center items-center py-3 px-5 text-base font-medium text-center rounded-lg border border-gray-300 hover:bg-gray-100 text-white bg-gradient-to-r from-green-500 via-green-600 to-green-700 hover:bg-gradient-to-br focus:ring-4 focus:outline-none focus:ring-purple-300 dark:focus:ring-purple-800">Register
+        Registrar Cuenta</button>
+    </form>
+
   </div>
+</div>

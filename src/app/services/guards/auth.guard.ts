@@ -1,11 +1,11 @@
 import { inject } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthServices } from '../auth.service';
 import { take, tap } from 'rxjs/operators';
 
 export const authGuard = () => {
 
-  const authService = inject(AuthService);
+  const authService = inject(AuthServices);
   const router = inject(Router);
   return authService.estadoDeUsuario
     .pipe(

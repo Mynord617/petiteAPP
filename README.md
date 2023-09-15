@@ -1,17 +1,13 @@
 
 ## PROYECTO SISTEMA DE SOPORTE DE DECISIONES 
   ## GRUPO #1
-     1. Allan Flores
-     2. Pamela Palma
-     3. Estefany Lagos
-     4. Dagoberto Doblado
-     5. Emanuel Portillo
-     6. Mynor Dominguez
-
-
-
-
-
+        Nombre                #Cuenta
+     1. Allan Flores          61911499
+     2. Pamela Palma          62111056
+     3. Estefany Lagos        61951407
+     4. Dagoberto Doblado     62122408
+     5. Emanuel Portillo      62111373
+     6. Mynor Dominguez       61641352
 
 # Pasos para realizar un commit en git
 	1. git status  

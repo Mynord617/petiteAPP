@@ -1,39 +1,40 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { ProductosService } from '../services/productos.service';
-
+import Swal from 'sweetalert2';
+//import { Storage, ref, uploadBytes } from '@angular/fire/storage';
 @Component({
   selector: 'app-crear-producto',
   templateUrl: './crear-producto.component.html',
   styleUrls: ['./crear-producto.component.css']
 })
-export class CrearProductoComponent implements OnInit {
-  
+export class CrearProductoComponent implements OnInit{
+ 
   formulario: FormGroup;
 
   categoria= [
     {
-      codigo: "BUF",
+      codigo: "Buffet",
       nombre:"Buffet"
     },
     {
-      codigo: "DES",
+      codigo: "Desayuno",
       nombre:"Desayuno"
     },
     {
-      codigo: "ALM",
+      codigo: "Almuerzo",
       nombre:"Almuerzo"
     },
     {
-      codigo: "CEN",
+      codigo: "Cena",
       nombre:"Cena"
     },
     {
-      codigo: "MAR",
+      codigo: "Mariscos",
       nombre:"Mariscos"
     },
     {
-      codigo: "FRI",
+      codigo: "Frites",
       nombre:"Frites"
     },
   ]
@@ -60,6 +61,7 @@ export class CrearProductoComponent implements OnInit {
   async  onSubmit(){
     console.log(this.formulario.value);
     const respuesta =  await this.productoServicio.agregarNuevoProducto(this.formulario.value);
+    this.formulario.reset();
     console.log(respuesta);
     
   }
@@ -71,4 +73,32 @@ export class CrearProductoComponent implements OnInit {
     console.log(respuesta);
     
   } 
+  
+  confirmacionEnvio(){
+    Swal.fire({
+      position: 'top-end',
+      icon: 'success',
+      title: '¡Producto creado con exito!',
+      showConfirmButton: false,
+      timer: 1200
+    })
+
+  }
+  
+  /*
+
+    // constructor(
+          private storage: Storage
+    )
+
+   cargarImagen($event: any){
+    const imagen = $event.target.files[0];
+    console.log(imagen);
+    const imgRef = ref(this.storage, `imagenes/${imagen.name}`)
+    uploadBytes(imgRef, imagen)
+    .then(response => console.log(response))
+    .catch(error => console.log(error));
+  }
+
+  */
 }

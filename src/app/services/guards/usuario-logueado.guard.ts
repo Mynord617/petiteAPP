@@ -1,12 +1,12 @@
 import { CanActivateFn, Router } from '@angular/router';
-import { AuthService } from '../auth.service';
+import { AuthServices } from '../auth.service';
 import { inject } from '@angular/core';
 import { take, tap } from 'rxjs';
 
 export const usuarioLogueadoGuard = () => {
  
 
-  const authService = inject(AuthService);
+  const authService = inject(AuthServices);
   const router = inject(Router);
   return authService.estadoDeUsuario
     .pipe(

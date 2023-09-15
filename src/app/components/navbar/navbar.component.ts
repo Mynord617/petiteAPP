@@ -1,7 +1,7 @@
 import { CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { Router, RouterModule } from '@angular/router';
-import { AuthService } from 'src/app/services/auth.service';
+import { AuthServices } from 'src/app/services/auth.service';
 import { Auth } from '@firebase/auth';
 import Swal from 'sweetalert2';
 import { UtilsService } from 'src/app/shared/services/utils.service';
@@ -21,10 +21,12 @@ import { UtilsService } from 'src/app/shared/services/utils.service';
 })
 export class NavbarComponent implements OnInit{
 
+  usuarioLogueado = this.authServices.obtenerUsuarioLogueado();
+
   currentDate: Date = new Date();
 
 constructor (
-  private authServices: AuthService,
+  private authServices: AuthServices,
   private router: Router,
   private utilsService: UtilsService
 ) {
@@ -36,6 +38,7 @@ constructor (
       this.currentDate = valorDate;
      })
   }
+
 
   cerrarSesion() {
   this.authServices.logout()

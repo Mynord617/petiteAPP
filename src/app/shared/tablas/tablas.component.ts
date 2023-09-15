@@ -10,6 +10,33 @@ import { ProductosService } from 'src/app/productos/services/productos.service';
 export class TablasComponent implements OnInit {
 
 
+  categoria= [
+    {
+      codigo: "Buffet", 
+      nombre:"Buffet"
+    },
+    {
+      codigo: "Desayuno",
+      nombre:"Desayuno"
+    },
+    {
+      codigo: "Almuerzo",
+      nombre:"Almuerzo"
+    },
+    {
+      codigo: "Cena",
+      nombre:"Cena"
+    },
+    {
+      codigo: "Mariscos",
+      nombre:"Mariscos"
+    },
+    {
+      codigo: "Frites",
+      nombre:"Frites"
+    },
+  ]
+
   public productos: Productos[] = [];
 
   constructor(private productoService: ProductosService){
